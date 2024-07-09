@@ -12,7 +12,7 @@ checkv_env - checkv (v1.0.3)
 
 pharokka_env - pharokka (v1.7.2)
 
-bedtools_env (need to fix enviroment name....) - biopython (v1.84)
+bedtools_env (need to fix environment name....) - biopython (v1.84)
 
 ##################################################################################################################################################################################
 
@@ -22,11 +22,11 @@ rewrite headers of input fast to ensure compatibility with the script
 ./rewrite_fasta_headers-4-prophage-hunting-v1.1.sh genome.fna input-genome-fixed.fna
 
 Run the prophage hunting script
-./prophage_gbk+tsv_here_checkv-v1 -i input-genome-fixed.fna
+./prophage_gbk+tsv_here_checkv-v1.sh -i input-genome-fixed.fna
 
 Extract prophage sequences from pharokka annotation
-./prophage_gbk+tsv_here_checkv-v1 <path_to_virsorter_output>
+./prophage_gbk+tsv_here_checkv-v1.sh <path_to_virsorter_output>
 
 ####################################################################################################################################################################################
 
-The last script calls on several scripts from the processing_scripts_v2 folder - ensure it is placed in the same directory as /prophage_extract_gbk+tsv_here-v5.sh script.
+The last script calls scripts from the processing_scripts_checkv_v1 folder - ensure it is placed in the same directory as /prophage_gbk+tsv_here_checkv-v1.sh script.
