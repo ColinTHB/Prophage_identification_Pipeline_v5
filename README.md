@@ -22,7 +22,7 @@ rewrite headers of input fast to ensure compatibility with the script
 ./rewrite_fasta_headers-4-prophage-hunting-v1.1.sh genome.fna input-genome-fixed.fna
 
 Run the prophage hunting script
-./prophage_gbk+tsv_here_checkv-v1.sh -i input-genome-fixed.fna
+./prophage-hunting-checkv-v3.1.sh -i input-genome-fixed.fna 
 
 Extract prophage sequences from pharokka annotation
 ./prophage_gbk+tsv_here_checkv-v1.sh <path_to_virsorter_output>
