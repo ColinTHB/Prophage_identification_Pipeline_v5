@@ -187,4 +187,14 @@ awk 'BEGIN { FS="\t"; OFS="\t"; }
         if (NR > 1) {
             fragment = "pharokka_" ++prophage_counter;
         } else {
-            fragment =
+            fragment = "fragment";
+        }
+
+        # Print the modified line with the new fragment column
+        if (NR == 1) {
+            print $0, "scaffold", "fragment";
+        } else {
+            print $0, scaffold, fragment;
+        }
+    }' "$input_file" > "$output_file"
+
