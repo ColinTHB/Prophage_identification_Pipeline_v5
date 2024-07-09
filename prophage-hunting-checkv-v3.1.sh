@@ -175,6 +175,7 @@ output_file="${output_dir}/manual_prophage_coordinates.tsv"
 prophage_counter=1
 
 # Process the file with awk
+# Process the file with awk
 awk 'BEGIN { FS="\t"; OFS="\t"; }
     {
         # Duplicate seqname to scaffold
@@ -187,14 +188,17 @@ awk 'BEGIN { FS="\t"; OFS="\t"; }
         if (NR > 1) {
             fragment = "pharokka_" ++prophage_counter;
         } else {
-            fragment = "fragment";
+            fragment = "fragment";  # header line
         }
 
-        # Print the modified line with the new fragment column
+        # Print the modified line with new headers
         if (NR == 1) {
-            print $0, "scaffold", "fragment";
+            print "scaffold", "fragment", "start", "stop";
         } else {
-            print $0, scaffold, fragment;
+            print scaffold, fragment, $16, $17;
         }
-    }' "$input_file" > "$output_file"
+    }
+' "$input_file" > "$output_file"
+
+echo "Transformation complete. Output saved to $
 
