@@ -175,15 +175,12 @@ output_file="${output_dir}/manual_prophage_coordinates.tsv"
 prophage_counter=1
 
 # Process the file with awk
-# Process the file with awk
-awk 'BEGIN { FS="\t"; OFS="\t"; }
+awk 'BEGIN { FS="\t"; OFS="\t"; prophage_counter=0; }
     {
         # Duplicate seqname to scaffold
         scaffold = $1;
-
-        # Remove ||*_partial from scaffold column
-        gsub(/\|\|.*_partial/, "", scaffold);
-
+        # Remove ||*_partial and ||*_full from scaffold column
+        gsub(/\|\|[^|]*_partial|\|\|full/, "", scaffold);
         # Increment prophage counter and format fragment column
         if (NR > 1) {
             fragment = "pharokka_" ++prophage_counter;
@@ -200,4 +197,4 @@ awk 'BEGIN { FS="\t"; OFS="\t"; }
     }
 ' "$input_file" > "$output_file"
 
-echo "Transformation complete. Output saved to $
+echo "Transformation complete. Output saved to $"
