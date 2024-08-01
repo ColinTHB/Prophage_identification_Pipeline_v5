@@ -31,7 +31,8 @@ Extract prophage sequences from pharokka annotation
 
 The last script calls scripts from the processing_scripts_checkv_v1 folder - ensure it is placed in the same directory as /prophage_gbk+tsv_here_checkv-v1.sh script.
 
-###################################################################################################################################################################################
+####################################################################################################################################################################################
+
 Compare coverage
 Needs Samtools and Bowtie2
 
