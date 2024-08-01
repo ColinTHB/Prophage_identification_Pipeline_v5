@@ -24,15 +24,16 @@ rewrite headers of input fast to ensure compatibility with the script
 Run the prophage hunting script
 ./prophage-hunting-checkv-v3.1.sh -i input-genome-fixed.fna 
 
-###################################################################################################################################################################################
-Compare coverage
-Needs Samtools and Bowtie2
-
-Execute as follows
-./compare_coverage.sh <forward_reads> <reverse_reads> <genome_fasta> <coordinates_file> <output_file> <threads> <output_dir>
 Extract prophage sequences from pharokka annotation
 ./prophage_gbk+tsv_here_checkv-v1.sh <path_to_virsorter_output>
 
 ####################################################################################################################################################################################
 
 The last script calls scripts from the processing_scripts_checkv_v1 folder - ensure it is placed in the same directory as /prophage_gbk+tsv_here_checkv-v1.sh script.
+
+###################################################################################################################################################################################
+Compare coverage
+Needs Samtools and Bowtie2
+
+Execute as follows
+./compare_coverage.sh <forward_reads> <reverse_reads> <genome_fasta> <coordinates_file> <output_file> <threads> <output_dir>
