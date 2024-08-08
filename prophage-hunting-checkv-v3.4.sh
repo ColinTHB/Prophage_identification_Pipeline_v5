@@ -92,7 +92,8 @@ cut -f1 "${output_dir}/virsorter2_output/final-viral-score.tsv" > "${output_dir}
 
 # Combine the extracted column with the rest of final-viral-boundary.tsv
 echo "Combining extracted column with final-viral-boundary.tsv..."
-paste "${output_dir}/virsorter2_output/temp-column.txt" <(cut -f2- "${output_dir}/virsorter2_output/final-viral-boundary.tsv") > "${output_dir}/virsorter2_output/final-viral-boundary-new.tsv"
+
+awk 'NR==1 ||  $1=$29' OFS="\t" "${output_dir}/virsorter2_output/final-viral-boundary.tsv" > "${output_dir}/virsorter2_output/final-viral-boundary-new.tsv"
 
 # Clean up temporary file
 rm "${output_dir}/virsorter2_output/temp-column.txt"
